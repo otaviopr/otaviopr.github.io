@@ -1,0 +1,444 @@
+<!DOCTYPE HTML>
+<!--[if lt IE 7]><html class="no-js lt-ie9 lt-ie8 lt-ie7"><![endif]-->
+<!--[if IE 7]><html class="no-js lt-ie9 lt-ie8"><![endif]-->
+<!--[if IE 8]><html class="no-js lt-ie9"><![endif]-->
+<!--[if gt IE 8]><!--><html class="no-js"><!--<![endif]-->
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale = 1.0, user-scalable = no">
+    <title>Otávio Ribeiro - Portfolio</title>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700,600' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="css/normalize.css" type="text/css" media="screen">
+    <link rel="stylesheet" href="css/grid.css" type="text/css" media="screen">
+    <link rel="stylesheet" href="css/style.css" type="text/css" media="screen">
+    <!-- <link rel="stylesheet" href="css/style.min.css" type="text/css" media="screen"> -->
+    <!--[if IE]><script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+    
+    <!--Initialize the gallery-->
+    <link rel="stylesheet" href="css/rtg.css"/>
+    
+    <link rel="stylesheet" href="reveal/reveal.css">	
+    
+    <style>
+        /* Only css for gallery */
+        
+        #myGallery {
+            width:100%;
+        }
+        .resize-message {
+            margin:0 auto;
+            width:98%;
+            padding:10px 0px;
+        }
+        .resize-message > p {
+            color:white;
+            font-family: 'open sans', Arial;
+            padding:0;
+            margin: 0;
+            text-align:center;
+            font-weight: 300;
+        }
+        .blue {
+            background-color:#1c9bd7;
+            margin-top:5px;
+        }
+        .grey > p {
+            font-size: 22px;
+        }
+        .grey {
+            background-color: #808080;
+            margin-top:10px;
+        }
+        .blue > p {
+            font-family: 18px;
+        }
+        .grey a, .blue a {
+            color:white;
+        }
+        .grey a:visited, .blue a:visited {
+            color:white;
+        }
+        span.step {
+            font-size:20px;
+        }
+        body,td,th {
+            font-family: "Open Sans", sans-serif;
+        }
+    </style>
+    
+    <!--Required JavaScript Files-->
+    <script src="js/jquery-1.8.2.min.js"></script>
+    <script src="js/rtg.min.js"></script>
+    <script src="js/lightbox.min.js"></script>
+   
+   
+    
+    
+    
+    <!--Initialize the gallery-->
+    <script>
+        $(document).ready(function () {
+            $('#myGallery').rtg({
+                imageWidth:315,
+                spacing:10,
+                categories:false,
+                lightbox:true,
+                center: true
+            });
+            
+            var didit = false,
+                done = false;
+            
+            setTimeout(function () {
+                var bWidth = $('.rtg-images').width();
+                
+                var resizeStep = function () {
+                    if (bWidth != $('.rtg-images').width()) {
+                        didit = true;
+                        $('#steps > p').html('<span class="step">Step 2:</span> Awesome. Now click a category and watch it sort!');
+                        $('.rtg-categories > li > a').on('click', function (e) {
+                            if (!done) {
+                                $('#steps > p').html('<span class="step">Step 3:</span> This is an easy one. Click an image!');
+                            }
+                            
+                            $('#myGallery img').on('click', function (e) {
+                                $('#steps > p').html('<span class="step">Great Job. <a href="http://codecanyon.net/item/responsive-tile-gallery/3290154">Check out Responsive Tile Gallery on CodeCanyon!</a></span>');
+                                done = true;
+                            });
+                        });
+                    } else {
+                        if (didit !== true) {
+                            $('#steps > p').html('<span class="step">Still Step 1:</span> Resize the width a little more. Trust me...');
+                        }
+                    }
+                    bWidth = $('.rtg-images').width();
+                };
+                
+                var stepTimer;
+                
+                $(window).resize(function () {
+                    if (didit === false) {
+                        clearTimeout(stepTimer);
+                        stepTimer = setTimeout(resizeStep, 200);
+                    }
+                });
+            }, 1000);
+        });
+    </script>
+    
+    
+    
+</head>
+
+<body>
+    <div class="menu">
+        <div class="container clearfix">
+            <div id="logo" class="grid_3">
+                <img src="images/logo-menu.svg">
+            </div>
+            
+            <div id="nav" class="grid_9 omega">
+                <ul class="navigation">
+                    <li><a href="#portfolio">PORTFOLIO</a></li>
+                    <li><a href="#sobre">SOBRE</a></li>
+                    <li><a href="#contato">CONTATO</a></li>
+                    
+                    <div class="clearfix"></div>
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+    <!--<div class="slide" data-slide="1" id="slide1" data-stellar-background-ratio="0.5">-->
+    <div class="slide"  id="slide1" data-type="background" data-speed="10">
+        <div id="slide1b" data-type="background" data-speed="3">
+            <img class="logo" src="images/logo.svg">
+        </div>
+    </div>
+    <div class="slide" data-slide="2" id="portfolio">
+    
+        <div id='myGallery' class='rtg-gallery'>
+            <div class='rtg-images'>
+                <div data-category="Web">
+                    <a href="#" class="big-link" data-reveal-id="mzk">
+                        <img src='images/destaque/mzk.jpg'/>
+                    </a>
+                </div>
+                
+                <div data-category="Web">
+                    <a href="#" class="big-link" data-reveal-id="folk">
+                        <img src='images/destaque/folk.jpg'/>
+                    </a>
+                </div>
+                
+                <div data-category="Web">
+                    <a href="#" class="big-link" data-reveal-id="confraria">
+                        <img src='images/destaque/confraria.jpg'/>
+                    </a>
+                </div>
+                                
+                <div data-category="Impresso">
+                    <a href="#" class="big-link" data-reveal-id="petrobras">
+                        <img src='images/destaque/petrobras.jpg'/>
+                    </a>
+                </div>
+                
+                <div data-category="Impresso">
+                    <a href="#" class="big-link" data-reveal-id="abracoaching">
+                        <img src='images/destaque/abracoaching.jpg'/>
+                    </a>
+                </div>
+                
+                <div data-category="Impresso">
+                    <a href="#" class="big-link" data-reveal-id="spirit">
+                        <img src='images/destaque/spirit.jpg'/>
+                    </a>
+                </div>
+                
+                <div data-category="Impresso">
+                    <a href="#" class="big-link" data-reveal-id="mattinata">
+                        <img src='images/destaque/matinatta.jpg'/>
+                    </a>
+                </div>
+                
+                <div data-category="Web">
+                    <a href="#" class="big-link" data-reveal-id="wpensar">
+                        <img src='images/destaque/wpensar.jpg'/>
+                    </a>
+                </div>
+                
+                <div data-category="Web">
+                    <a href="#" class="big-link" data-reveal-id="miksi">
+                        <img src='images/destaque/miksi.jpg'/>
+                    </a>
+                </div>
+                
+                <div data-category="Impresso">
+                    <a href="#" class="big-link" data-reveal-id="justpepper">
+                        <img src='images/destaque/justpepper.jpg'/>
+                    </a>
+                </div>
+                
+                <div data-category="Impresso">
+                    <a href="#" class="big-link" data-reveal-id="tablado">
+                        <img src='images/destaque/tablado.jpg'/>
+                    </a>
+                </div>
+                
+                <div data-category="Web">
+                   <a href="#" class="big-link" data-reveal-id="goa">
+                        <img src='images/destaque/goa.jpg'/>
+                    </a>
+                </div>
+                
+                <div data-category="Impresso">
+                   <a href="#" class="big-link" data-reveal-id="doce-segredo">
+                        <img src='images/destaque/doce-segredo.jpg'/>
+                    </a>
+                </div>
+                
+                <div data-category="Impresso">
+                    <a href="#" class="big-link" data-reveal-id="hiv">
+                        <img src='images/destaque/hiv.jpg'/>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- TRABALHOS -->
+    
+    <div id="mzk" class="reveal-modal">
+			<h1>_MZK'</h1>
+			<div><div style="float:left;"><img src="portfolio/mzk.jpg"></div>
+            <div style="float:left; margin-left:20px; margin-bottom:150px; width:300px; line-height:20px;"><b>Identidade Visual / Web Design </b><br><br> A marca tem como objetivo falar de música alternativa, trazendo notícias e matérias originais sobre o tema. Foi desenvolvido um projeto de Identidade Visual, bem como toda a concepção da plataforma digital em forma de um portal de notícias.</div></div>
+            <div style="float:right; margin-top:20px;"><img src="portfolio/mzk2.jpg"></div>
+            <div style="float:left; margin-top:20px;"><img src="portfolio/mzk3.jpg"></div>
+			<a class="close-reveal-modal">&#215;</a>
+		</div>
+        
+     <div id="folk" class="reveal-modal">
+			<h1>Folk</h1>
+			<div><div style="float:left;"><img src="portfolio/videofolk.png"></div>
+            <div style="float:left; margin-left:20px; margin-bottom:150px; width:300px; line-height:20px;"><b>Identidade Visual / Web Design / Vídeo</b><br><br></div></div>
+            <div style="float:right; margin-top:20px;"><img src="portfolio/folk1.jpg"></div>
+            <div style="float:left; margin-top:20px;"><img src="portfolio/folk4.jpg"></div>
+			<div style="float:left; margin-top:20px;"><img src="portfolio/folk2.jpg"></div>
+            <div style="float:right; margin-top:20px;"><img src="portfolio/folk3.jpg"></div>
+
+			<a class="close-reveal-modal">&#215;</a>
+		</div>
+        
+     <div id="confraria" class="reveal-modal">
+			<h1>Boteco Confraria</h1>
+			<div><div style="float:left;"><img src="portfolio/confraria.jpg"></div>
+            <div style="float:left; margin-left:20px; margin-bottom:150px; width:300px; line-height:20px;"><b>Web Design </b><br><br></div></div>
+            <div style="float:right; margin-top:20px;"><img src="portfolio/confraria2.jpg"></div>
+            <div style="float:right; margin-top:20px;"><img src="portfolio/confraria3.jpg"></div>
+            <div style="float:left; margin-top:20px;"><img src="portfolio/confratag1.jpg"></div>
+            <div style="float:left; margin-top:20px;"><img src="portfolio/confratag2.jpg"></div>
+            <div style="float:right; margin-top:20px;"><img src="portfolio/confra-cardapio.jpg"></div>
+			<a class="close-reveal-modal">&#215;</a>
+		</div>
+        
+        
+      <div id="petrobras" class="reveal-modal">
+			<h1>Jornal Engenharia Petrobras</h1>
+			<div><div style="float:left;"><img src="portfolio/petrobras1b.jpg"></div>
+            <div style="float:left; margin-left:20px; margin-bottom:150px; width:300px; line-height:20px;"><b>Impresso / Diagramação / Ilustração </b><br><br></div></div>
+            <div style="float:right; margin-top:20px;"><img src="portfolio/petrobras2.jpg"></div>
+            <div style="float:left; margin-top:20px;"><img src="portfolio/petrobras3.jpg"></div>
+            <div style="float:right; margin-top:20px;"><img src="portfolio/petrobras4.jpg"></div>
+			<div style="float:left; margin-top:20px;"><img src="portfolio/petrobras5.jpg"></div>
+			<a class="close-reveal-modal">&#215;</a>
+      </div>
+      
+     <div id="miksi" class="reveal-modal">
+			<h1>Restaurante Miksi</h1>
+			<div><div style="float:left;"><img src="portfolio/miksi-site.jpg"></div>
+            <div style="float:left; margin-left:20px; margin-bottom:150px; width:300px; line-height:20px;"><b>Web Design </b><br><br> </div></div>
+            <div style="float:right; margin-top:20px;"><img src="portfolio/miksi-site2.jpg"></div>
+            <div style="float:left; margin-top:20px;"><img src="portfolio/miksi-site3.jpg"></div>
+			<a class="close-reveal-modal">&#215;</a>
+		</div>
+        
+     <div id="justpepper" class="reveal-modal">
+			<h1>Just Pepper</h1>
+			<div><div style="float:left;"><img src="portfolio/justpeppercartao.jpg"></div>
+            <div style="float:left; margin-left:20px; margin-bottom:150px; width:300px; line-height:20px;"><b>Identidade Visual </b><br><br> </div></div>
+            <div style="float:right; margin-top:20px;"><img src="portfolio/justpepper1.jpg"></div>
+            <div style="float:left; margin-top:20px;"><img src="portfolio/justpepper2.jpg"></div>
+           	<div style="float:right; margin-top:20px;"><img src="portfolio/justpepper3.jpg"></div>
+			<a class="close-reveal-modal">&#215;</a>
+		</div>
+        
+        
+      <div id="goa" class="reveal-modal">
+			<h1>Revista GOA</h1>
+			<div><div style="float:left;"><img src="portfolio/goa1.jpg"></div>
+             <div style="float:left; margin-left:20px; margin-bottom:150px; width:300px; line-height:20px;"><b>Impresso / Diagramação / Edição de Imagens </b><br><br> </div></div>
+            <div style="float:right; margin-top:20px;"><img src="portfolio/goa2.jpg"></div>
+            <div style="float:left; margin-top:20px;"><img src="portfolio/goa3.jpg"></div>
+            <div style="float:right; margin-top:20px;"><img src="portfolio/goa4.jpg"></div>
+            <div style="float:left; margin-top:20px;"><img src="portfolio/goa5.jpg"></div>
+			<a class="close-reveal-modal">&#215;</a>
+      </div>
+      
+      
+      <div id="tablado" class="reveal-modal">
+			<h1>Teatro O Tablado</h1>
+			<div><div style="float:left;"><img src="portfolio/tablado1.jpg"></div>
+             <div style="float:left; margin-left:20px; margin-bottom:150px; width:300px; line-height:20px;"><b>Identidade Visual</b><br><br></div></div>
+            <div style="float:right; margin-top:20px;"><img src="portfolio/tablado2.jpg"></div>
+			<a class="close-reveal-modal">&#215;</a>
+      </div>
+      
+      
+      <div id="hiv" class="reveal-modal">
+			<h1>Manual Direitos Humanos HIV/Aids</h1>
+			<div><div style="float:left;"><img src="portfolio/hiv3.jpg"></div>
+             <div style="float:left; margin-left:20px; margin-bottom:150px; width:300px; line-height:20px;"><b>Impresso / Diagramação / Ilustração </b><br><br></div></div>
+            <div style="float:right; margin-top:20px;"><img src="portfolio/hiv1.jpg"></div>
+            <div style="float:left; margin-top:20px;"><img src="portfolio/hiv2.jpg"></div>
+			<a class="close-reveal-modal">&#215;</a>
+      </div>
+      
+      
+      <div id="doce-segredo" class="reveal-modal">
+			<h1>Doce Segredo</h1>
+			<div><div style="float:left;"><img src="portfolio/docecartao.jpg"></div>
+            <div style="float:left; margin-left:20px; margin-bottom:150px; width:300px; line-height:20px;"><b>Identidade Visual </b><br><br></div></div>
+            <div style="float:right; margin-top:20px;"><img src="portfolio/doce1.jpg"></div>
+            <div style="float:left; margin-top:20px;"><img src="portfolio/doce2.jpg"></div>
+			<a class="close-reveal-modal">&#215;</a>
+      </div>
+    
+    <div id="abracoaching" class="reveal-modal">
+			<h1>Abracoaching</h1>
+			<div><div style="float:left;"><img src="portfolio/abracoaching1.jpg"></div>
+            <div style="float:left; margin-left:20px; margin-bottom:150px; width:300px; line-height:20px;"><b>Identidade Visual / Impressos / Diagramação / Illustração </b><br><br></div></div>
+            <div style="float:right; margin-top:20px;"><img src="portfolio/abracoaching3.jpg"></div>
+            <div style="float:left; margin-top:20px;"><img src="portfolio/abracoaching2.jpg"></div>
+            <div style="float:right; margin-top:20px;"><img src="portfolio/abracoaching4.jpg"></div>
+            <div style="float:left; margin-top:20px;"><img src="portfolio/abracoaching7.jpg"></div>
+			<a class="close-reveal-modal">&#215;</a>
+      </div>
+    
+    <div id="spirit" class="reveal-modal">
+			<h1>Spirit</h1>
+			<div><div style="float:left;"><img src="portfolio/spirit2.jpg"></div>
+            <div style="float:left; margin-left:20px; margin-bottom:150px; width:300px; line-height:20px;"><b>Impresso / Diagramação / Web </b><br><br></div></div>
+            <div style="float:right; margin-top:20px;"><img src="portfolio/spirit.jpg"></div>
+			<a class="close-reveal-modal">&#215;</a>
+      </div>
+    
+     <div id="mattinata" class="reveal-modal">
+			<h1>Mattinata</h1>
+			<div><div style="float:left;"><img src="portfolio/matinatta.jpg"></div>
+            <div style="float:left; margin-left:20px; margin-bottom:150px; width:300px; line-height:20px;"><b>Impresso / Diagramação </b><br><br></div></div>
+            <div style="float:right; margin-top:20px;"><img src="portfolio/matinatta2.jpg"></div>
+            <div style="float:left; margin-top:20px;"><img src="portfolio/matinatta3.jpg"></div>
+            <div style="float:right; margin-top:20px;"><img src="portfolio/matinatta4.jpg"></div>
+			<a class="close-reveal-modal">&#215;</a>
+      </div>
+      
+      
+      <div id="wpensar" class="reveal-modal">
+			<h1>WPensar</h1>
+			<div><div style="float:left;"><img src="portfolio/wpensar2.jpg"></div>
+            <div style="float:left; margin-left:20px; margin-bottom:150px; width:300px; line-height:20px;"><b>Impresso / Diagramação / Web </b><br><br></div></div>
+            <div style="float:right; margin-top:20px;"><img src="portfolio/wpensar1.jpg"></div>
+            <div style="float:left; margin-top:20px;"><img src="portfolio/wpensar3.jpg"></div>
+			<a class="close-reveal-modal">&#215;</a>
+      </div>
+      
+      
+      
+      <div id="curriculo" class="reveal-modal">
+			<div align="center"><img src="curriculo.jpg"></div>
+            <a class="close-reveal-modal">&#215;</a>            
+      </div>   
+
+    
+    
+    <!-- TRABALHOS fim -->
+    
+    
+    
+ 	<div class="slide" id="sobre">
+		<div class="container clearfix">
+			<div id="content" class="grid_12">
+				<div class="grid_6" style="float:right;"><h2>Olá! Meu nome é Otávio Ribeiro e posso dizer que tenho paixão pela criatividade. Criativo desde pequeno, tenho experiência com design gráfico, design de interface/web, ilustração e direção de arte. Estou sempre disposto a novos desafios criativos ;) <br> Entre em contato comigo aqui embaixo!</h2></div>
+			</div>
+		</div>
+	</div>
+    
+    
+    <div class="slide" id="contato">
+		<div class="container clearfix">
+			<div id="content" class="grid_12" style="text-align:center;">
+				<a href="http://fb.com/otapr" target="_new"><img src="images/facebook.svg" style="margin-right:10px;"></a>
+                <a href="http://twitter.com/otaviopr" target="_new"><img src="images/twitter.svg" style="margin-right:10px;"></a>
+                <a href="http://www.behance.net/otaviopr" target="_new"><img src="images/behance.svg" style="margin-right:10px;"></a>
+                <a href="http://br.linkedin.com/in/otaviopr?trk=shareTw" target="_new"><img src="images/linkedin.svg" style="margin-right:10px;"></a>
+                <a href="mailto:contato@otaviopr.com"><h2 style="margin-top:30px;">contato@otaviopr.com</h2></a>
+                <a href="#" class="big-link" data-reveal-id="curriculo"><h2 style="margin-top:30px;">Veja meu currículo</h2></a>
+                <br><br><br><br><br><br>
+                <div style="font-size:50px">Obrigado pela atenção :)</div>
+                
+			</div>
+		</div>
+	</div>
+
+ 
+ 
+ 
+    <script type="text/javascript" src="reveal/jquery.reveal.js"></script>
+    <script type="text/javascript" src="js/jquery.stellar.min.js"></script> 
+    <script type="text/javascript" src="js/waypoints.min.js"></script> 
+    <script type="text/javascript" src="js/scripts.js"></script> 
+    <!-- <script type="text/javascript" src="js/scripts.min.js"></script> -->
+    
+</body>
+</html>

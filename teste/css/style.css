@@ -1,0 +1,411 @@
+/* Global */
+
+body {
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 400;
+	font-size: 1em;
+	color: #aaaaab;
+	background-color:#f5f5f5;
+}
+img {
+	max-width: 100%;
+}
+a:link {
+	color: #aaaaab;
+	text-decoration:none;
+}
+a:hover {
+	color: #aaaaab;
+	text-decoration:none;
+}
+a:visited {
+	color: #aaaaab;
+	text-decoration:none;
+}
+
+
+
+
+
+/* Navigation */
+
+.menu {
+	position:fixed;
+	bottom:0px;
+	width:100%; 
+	height:auto; 
+	background-color:#e1e1e1;
+	z-index:100;
+}
+#logo {
+	text-align: center;
+	margin: 10px 0;
+}
+#nav {
+	text-align: right;
+	margin: 0;
+/*    height: 75px;*/
+}
+.navigation{
+	float: right;
+	list-style: none;
+	margin: 0;
+/*    height: 75px;*/
+}
+.navigation li {
+    display: inline-block;
+	margin:0 0 0 50px;
+    border-bottom: 0 solid #6c01b9;
+    height: 75px;
+    line-height: 75px;
+    -webkit-transition:
+        height 200ms ease,
+        line-height 200ms ease,
+        border-bottom 200ms ease;
+    -moz-transition:
+        height 200ms ease,
+        line-height 200ms ease,
+        border-bottom 200ms ease;
+    -ms-transition:
+        height 200ms ease,
+        line-height 200ms ease,
+        border-bottom 200ms ease;
+    -o-transition:
+        height 200ms ease,
+        line-height 200ms ease,
+        border-bottom 200ms ease;
+    transition:
+        height 200ms ease,
+        line-height 200ms ease,
+        border-bottom 200ms ease;
+}
+
+.navigation li:hover {
+	cursor: pointer;
+    height: 63px;
+    line-height: 67px;
+	border-bottom: 8px solid #6c01b9;
+	color: #6c01b9;
+}
+
+.navigation li:first-child {
+    margin: 0;
+}
+
+.navigation .active{
+	cursor: pointer;
+    height: 63px;
+    line-height: 67px;
+	border-bottom: 8px solid #6c01b9;
+	color: #6c01b9;
+}
+
+
+
+
+/* General Slides */ 
+
+.slide{
+	background-attachment: fixed;
+	width:100%;
+	height:auto;
+	position: relative;
+}
+
+
+
+/* Slide 1 */ 
+
+#slide1{
+    position:relative;
+    z-index: 1;
+	background: url('../images/background-glitch.jpg') fixed;
+/*	padding: 65px 0 400px;*/
+}
+
+
+/* Slide 1b */ 
+
+#slide1b{
+    position:relative;
+    z-index: 2;
+	background: url('../images/background-glitchb.gif') fixed;
+}
+
+
+/* Logo */
+
+.logo {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 3;
+    margin: -200px 0 0 -245px;
+}
+
+
+/* Slide 2 */ 
+
+#portfolio{
+	padding:0 0 50px;
+}
+#portfolio h1 {
+	font-size: 3.8em;
+	letter-spacing: -3px;
+	line-height: 0px;
+	color:#ffffff;
+	font-weight: 700;
+}
+#portfolio h2 {
+	font-size: 2em;
+	color: #ffffff;
+	line-height: 0px;
+	padding-bottom:20px;
+	font-weight: 400;
+}
+
+
+
+
+/* Slide 3 */ 
+
+#sobre {
+    position:relative;
+    z-index: 1;
+	background: url('../images/sobre3.jpg');
+	height:500px;
+	padding: 65px 0 0;
+	margin-bottom:50px;
+} 
+
+#sobre h2 {
+	font-size: 2em;
+	color: #12467b;
+	padding-bottom:20px;
+	font-weight: 400;
+	text-shadow: 0.1em 0.1em #FFF;
+}
+
+
+
+
+/* Slide 4 */
+
+#contato{
+	height:350px;
+}
+#contato h1 {
+	font-size: 3.8em;
+	letter-spacing: -3px;
+	line-height: 0px;
+	color:#B3B3B3;
+	font-weight: 700;
+}
+#contato h2 {
+	font-size: 2em;
+	color: #B3B3B3;
+	padding-bottom:20px;
+	font-weight: 400;
+}
+#contato h2:hover{
+	color:#6c01b9;
+}
+
+
+
+
+
+/* Tablet */
+@media screen and (max-width: 1024px) {
+
+#logo {
+	width: 30%;
+	text-align: center;
+	margin-top:20px;
+}
+
+#nav {
+	width:70%;
+	text-align:center;
+	margin:10px 0 0;
+}
+
+.navigation{
+	width: 100%;
+	list-style: none;
+	margin: 0;
+	padding:0;
+    text-align: center;
+}
+
+.navigation li {
+/*	float: left;*/
+    display: inline-block;
+	width:25%;
+	padding:0;
+}
+
+.slide{
+	background-attachment: fixed;
+	width:100%;
+	position: relative;
+/*	padding:150px 0;*/
+}
+
+#decorative {
+	display:none;
+}
+
+#content {
+	text-align:center;
+	width:100%;
+}
+
+#slide1 h1 {
+	line-height: 1em;
+}
+#slide1 h2 {
+	line-height: 1em;
+}
+#portfolio h1 {
+	line-height: 1em;
+}
+#portfolio h2 {
+	line-height: 1em;
+}
+#sobre h1 {
+	line-height: 1em;
+}
+#sobre h2 {
+	line-height: 1em;
+}
+#contato h1 {
+	line-height: 1em;
+}
+#contato h2 {
+	line-height: 1em;
+}
+
+}
+
+
+
+
+/* Mobile */
+@media screen and (max-width: 480px) {
+
+.menu {
+	height:37px;
+}
+
+.logo {
+	width:80%;
+    position: absolute;
+    z-index: 3;
+    margin: -125px 0 0 -125px;
+}
+
+
+#logo {
+	width: 25%;
+	text-align: center;
+	padding: 2px 0 0 0;
+	margin: 10px 0;
+}
+
+
+#nav {
+	width:75%;
+	margin: 5px 0 0 0;
+}
+.navigation{
+	font-size: 12px;
+	float: right;
+	list-style: none;
+	margin: 0;
+	width: 100%;
+	text-align:center;
+	margin: 0;
+	padding:0;
+	letter-spacing:-0.5px;
+}
+
+.navigation li{
+    display: inline-block;
+	width: 28%;
+	margin: 0 0 0 5px;
+	height: 30px;
+	line-height: 30px;
+    
+}
+
+.navigation li:hover {
+	cursor: pointer;
+    height: 26px;
+    line-height: 26px;
+	border-bottom: 4px solid #6c01b9;
+	color: #6c01b9;
+}
+
+.navigation .active {
+	cursor: pointer;
+    height: 26px;
+    line-height: 26px;
+	border-bottom: 4px solid #6c01b9;
+	color: #6c01b9;
+}
+
+.slide{
+	background-attachment: fixed;
+	width:100%;
+	position: relative;
+	padding: 0;
+}
+
+
+#sobre {
+	padding: 35px 0 0 0;
+}
+
+
+#contato {
+	margin-bottom:30px;
+}
+
+#slide1 h1 {
+	line-height: 1em;
+}
+#slide1 h2 {
+	line-height: 1em;
+}
+#portfolio h1 {
+	line-height: 1em;
+}
+#portfolio h2 {
+	line-height: 1em;
+}
+#sobre h1 {
+	line-height: 1em;
+}
+#sobre h2 {
+	line-height: 1em;
+	font-size:29px;
+}
+#contato h1 {
+	line-height: 1em;
+}
+#contato h2 {
+	line-height: 1em;
+	font-size:25px;
+}
+
+
+.rtg-categories {
+	text-align:center;
+	padding:0;
+}
+
+
+
+
+}
